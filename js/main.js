@@ -62,7 +62,8 @@ $(document).ready(function () {
         flatLink.removeClass("flat-active");
         flatPath.removeClass("flat-floor-active");
         currentFlatFloor = $(this).attr("data-flat-floor");
-        console.log(currentFlatFloor);
+
         $(`[data-flat=${currentFlatFloor}]`).toggleClass("flat-floor-active");
+        console.log($(`[data-flat=${currentFlatFloor}]`));
     });
 });
