@@ -8,6 +8,8 @@ $(document).ready(function () {
     var viewFlatsButton = $(".view-flats");
     var flatPath = $(".flats path");
     var flatLink = $(".flat-link");
+    var menuButton = $(".menu-button");
+    var navbarPanel = $(".navbar-panel")
     //функция при наведении мышкой на этаж
     $(".home-image path").on('mouseover', function () {
         floorPath.removeClass("current-floor"); //удаление класса активного этажа
@@ -62,8 +64,10 @@ $(document).ready(function () {
         flatLink.removeClass("flat-active");
         flatPath.removeClass("flat-floor-active");
         currentFlatFloor = $(this).attr("data-flat-floor");
-
         $(`[data-flat=${currentFlatFloor}]`).toggleClass("flat-floor-active");
-        console.log($(`[data-flat=${currentFlatFloor}]`));
+    });
+
+    menuButton.on('click', function () {
+        navbarPanel.toggle("fast");
     });
 });
